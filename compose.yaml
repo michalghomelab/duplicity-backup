@@ -13,5 +13,6 @@ services:
       # Optional: override built-in exclude patterns (whitespace/newline separated).
       # Leave unset to use defaults baked into backup.sh.
       BACKUP_EXCLUDES: |
+        /source/**/.*/**
         /source/stacks/jellyfin/config/data/metadata
         /source/stacks/adwireguard/adguard/opt-adguard-work/data/querylog.json*
