@@ -14,17 +14,14 @@ B2_BUCKET_URL=b2://$B2_ACCOUNT_ID:$B2_APPLICATION_KEY@$B2_BUCKET_NAME
 
 # Whitespace/newline-separated lists of patterns to include/exclude from backup.
 # Override via BACKUP_INCLUDES/BACKUP_EXCLUDES env vars (compose `|` block scalar works well).
-DEFAULT_INCLUDES="
-$SRC/**/.storage
-$SRC/**/.storage/**
-"
+DEFAULT_INCLUDES=""
 DEFAULT_EXCLUDES="
-$SRC/**/.*/**
+/source/stacks/esphome/config/.esphome
 /source/stacks/jellyfin/config/data/metadata
 /source/stacks/adwireguard/adguard/opt-adguard-work/data/querylog.json*
 "
-INCLUDES="${BACKUP_INCLUDES:-$DEFAULT_INCLUDES}"
-EXCLUDES="${BACKUP_EXCLUDES:-$DEFAULT_EXCLUDES}"
+INCLUDES="${BACKUP_INCLUDES-$DEFAULT_INCLUDES}"
+EXCLUDES="${BACKUP_EXCLUDES-$DEFAULT_EXCLUDES}"
 
 echo "--------------[ Source Preflight ]--------------"
 echo "SRC $SRC"
