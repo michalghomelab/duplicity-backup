@@ -42,7 +42,7 @@ jobs:
           ignore-unfixed: false
 
       - name: Grype scan
-        uses: anchore/scan-action@v7.4.0
+        uses: anchore/scan-action@v7.4.2
         id: grype
         with:
           image: duplicity-backup:scan-target
