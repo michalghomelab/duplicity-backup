@@ -1,4 +1,4 @@
-FROM alpine:3.24.1
+FROM alpine:3.24.3
 
 RUN apk add --update py-pip
 RUN apk add --no-cache duplicity py3-pexpect gnupg dpkg curl
